@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+{% block content %}
+ {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+<center>
+<body style="background-color:#9CB2F3">
+    <body style="background-color:#B9A9E6">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <div class="alert alert-info">
+  <h2>{{ user.username }}..!</h2>
+</div>
+</head>
+<div class="jumbotron">
+  <h1>PyCon 2019</h1>
+  <p></p>
+</div>
+<body>
+
+<form method="POST" class="post-form" action="/show">
+        {% csrf_token %}
+    <div class="container">
+<br>
+
+    <div class="form-group">
+    <label class="col-sm-4 col-form-label"></label>
+    <div class="col-sm-4">
+    <h2>Team Details</h2>
+    </div>
+  </div>
+<br>
+        <br>
+        <br>
+<center>
+    <div class="form-inline">
+    <label class="col-sm-6 col-form-label">Name Of Team:</label>
+    <div class="col-sm-4">
+      {{ form.Team_Name }}
+    </div>
+  </div>
+        </center>
+        <br>
+    <div class="form-inline">
+    <label class="col-sm-4 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+{% endblock %}
+</html>
+    </center>

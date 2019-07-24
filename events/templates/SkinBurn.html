@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <center>
+    <h2>Welcome to SkinBurn</h2>
+    <img src="static\images\skin.jpg" alt="Girl in a jacket" width="600" height="400">
+        </center>
+    <br>
+<center>
+
+ {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+
+   <form action="/reg_form" method="post" class="form">
+    {% csrf_token %}
+
+        <button type="submit" class="btn btn-info">Register</button>
+
+
+    <h3>Event Details:</h3>
+    <h2>Music Live Concert</h2>
+
+    <h3>When:</h3>
+    <h2>29 july 2019</h2>
+
+    <h3>Where:</h3>
+    <h2>Hinjawadi city,Pune</h2>
+    <br>
+
+
+
+
+       {% for event in events_list %}
+      <li>
+        <a href="/events/{{ event.id }}">{{ event.event_name }}, {{ event.location }}</a>
+        {{ event.date }}.
+      </li>
+    {% endfor %}
+
+
+</center>
+</head>
+<body>
+
+</body>
+</html>

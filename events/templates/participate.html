@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Participate
+{% endblock %}
+
+{% block content %}
+  <div>
+    <h1 class="center">Welcome, {{ user.full_name }}! </h1>
+      <h3 class="center">You have selected the event {{ events.name }}</h3>
+    <br>
+      <div>
+    <p class="center">Enter team details to participate...</p>
+    <form class="horizontal-form" method="post" action="/show">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <p>
+        <input class="btn btn-success" type="submit" value='Submit'>
+      </p>
+    </form>
+      </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% include 'navbar.html' %}
+
+{% block content %}
+<body style="background-color:white">
+<br>
+<center>
+  <h2>Team Details</h2>
+    </center>
+{% endblock %}
+<center>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<html lang="en">
+<head>
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Records</title>
+     {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Name</th>
+        <th>Team Name</th>
+        <th>Add Members</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+{% for employee in employees %}
+    <tr>
+        <td>{{ user.username }}</td>
+        <td>{{ employee.Team_Name }}</td>
+        <td>
+            <a href="/formset">Add</a>
+        </td>
+        <td>
+            <a href="/delete/{{ employee.id }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+<br>
+<br>
+</body>
+</center>
+</html>
+
+
+
+</html>
